@@ -9,15 +9,12 @@
 require 'EsClient.php';
 class Demo
 {
-    public function test(){
-        echo 'in test';
+    public function testAdd(){
         $es =  EsClient::getInstance();
         $es->addOne();
-
-        echo 'ok test';
-
     }
 }
 
 $demo = new Demo();
-$demo->test();
+
+$demo->testAdd();

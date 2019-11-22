@@ -18,6 +18,7 @@ class EsClient
     private static $host = ['http://127.0.0.1:9200'];
 
     private static $instance;
+
     private $client;
 
     private function __construct()
@@ -47,9 +48,9 @@ class EsClient
     public function addOne()
     {
         $params = [];
-        $params['index'] = 'index_test';
-        $params['type'] = 'man';
-        $params['id'] = '201804070201';  # 不指定就是es自动分配
+        $params['index'] = 'index_test';//索引名称
+        $params['type'] = 'man';        //type
+        $params['id'] = '20191121';     //不指定就是es自动分配
         $params['body'] = array('title' => '我是个title');
 
         return $this->client->index($params);
